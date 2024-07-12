@@ -4,10 +4,12 @@
 [Driving Dataset on Kaggle](https://www.kaggle.com/datasets/vinaypepakayala/driving-dataset/data)
 
 ## Methodology
+![Block architecture](https://github.com/user-attachments/assets/ab5e06f0-2d1a-43fd-9c7d-7c0ed9188cbf)
 
 ### ResNet-18 Based Model Architecture for Steering Angle Prediction
 
 The architecture is based on ResNet-18, a Convolutional Neural Network (CNN) with a three-component structure: the Encoder Network, the Spatial Pyramid Pooling (SPP) layer, and the Decoder Network consisting of two dense layers.
+
 
 #### Encoder
 The encoder extracts relevant features from the input image. It processes the raw input image to generate a set of feature maps that encapsulate essential visual information. ResNet-18 is chosen for its balanced depth and efficiency. ResNet-18 comprises 18 layers in total, including convolutional layers, batch normalization layers, and residual connections, which facilitate training deeper networks without encountering vanishing or exploding gradient problems. Other networks like MobileNet and EfficientNet were considered.
