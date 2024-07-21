@@ -81,8 +81,8 @@ class SteeringDataset(Dataset):
         image = Image.open(img_path)
         
         # Normalize the angle to [-1, 1] range
-        angle = ((angle + 450) % 900) - 450
-        normalized_angle = angle / 450  # Normalize to [-1, 1]
+        angle = ((angle + 450) % 900)
+        normalized_angle = angle / 900.0  # Normalize to [-1, 1]
         normalized_angle = normalized_angle * np.pi  # Convert to radians for the model
 
         if self.transform:
@@ -178,6 +178,7 @@ for epoch in range(num_epochs):
     print(f'Epoch [{epoch+1}/{num_epochs}], Val Loss: {val_loss:.4f}')
     print(f'Outputs: {outputs[:5].view(-1).cpu().numpy()}')  # Print first 5 outputs for inspection
     print(f'Angles: {angles[:5].view(-1).cpu().numpy()}')    # Print first 5 angles for inspection
+
 torch.save(model.state_dict(), 'steering_model.pth')
 # Testing
 model.eval()
