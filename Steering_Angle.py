@@ -112,7 +112,7 @@ batch_size = 32
 num_epochs = 70
 
 # Create dataset and dataloaders
-dataset = SteeringDataset(root_dir=r"/kaggle/input/driving-dataset/driving_dataset", transform=transform)
+dataset = SteeringDataset(root_dir=r"driving-dataset/driving_dataset", transform=transform)
 train_size = int(0.8 * len(dataset))
 val_size = int(0.1 * len(dataset))
 test_size = len(dataset) - train_size - val_size
